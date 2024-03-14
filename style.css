@@ -1,40 +1,92 @@
-
 * {
-  box-sizing: border-box;
-}
-body {
-  margin: 0;
-  padding: 0;
-  background-color: #efefef;
-  font-family: 'Open Sans', sans-serif;
-}
-.result{
-    background-color: black;
-    color: white;
-    grid-area: result;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .page {
+    width: 100%;
+    max-width: 320px;
+    margin: auto;
+  }
+  
+  .calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 20px 0;
+    transition: background-color 0.3s ease;
+  }
+  
+  .result {
+    grid-column: span 4;
+    background-color: #0a0a0a;
+    color: #fff;
     text-align: right;
-    font-size: 30px;
-}
-.C{
-    background-color: grey;
-    color: black;
-    grid-area: C;
-    text-align: center;
-    font-size: 30px;
-}
-.backspace{
-    background-color: grey;
-    color: black;
-    grid-area: backspace;
-    text-align: center;
-    font-size: 30px;
-}
-.numbers{
-    background-color: grey;
-    color: black;
-    text-align: center;
-    font-size: 30px;
-}
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 5px;
+  }
+  
+  .C, .backspace, .numbers, .division, .multiplication, .substraction, .addition, .equal {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+  
+  .C:hover, .backspace:hover, .numbers:hover {
+    background-color: #d4d4d4;
+  }
+  
+  .division, .multiplication, .substraction, .addition, .equal {
+    background-color: #ff9500;
+    color: #fff;
+  }
+  
+  .division:hover, .multiplication:hover, .substraction:hover, .addition:hover, .equal:hover {
+    background-color: #e78900;
+  }
+  
+  /* Support for larger screens */
+  @media (min-width: 768px) {
+    .page {
+      max-width: 400px;
+    }
+  
+    button {
+      font-size: 22px;
+      padding: 25px 0;
+    }
+  
+    .result {
+      font-size: 28px;
+    }
+  }
+  
+
+
+
+/* GRID */
 .n7{
     grid-area: n7;
 }
@@ -65,41 +117,6 @@ body {
 .n0{
     grid-area: n0;
 }
-.division{
-    background-color: orange;
-    color: white;
-    grid-area: division;
-    text-align: center;
-    font-size: 30px;
-}
-.multiplication{
-    background-color: orange;
-    color: white;
-    grid-area: multiplication;
-    text-align: center;
-    font-size: 30px;
-}
-.substraction{
-    background-color: orange;
-    color: white;
-    grid-area: substraction;
-    text-align: center;
-    font-size: 30px;
-}
-.addition{
-    background-color: orange;
-    color: white; 
-    grid-area: addition;
-    text-align: center;
-    font-size: 30px;
-}
-.equal{
-    background-color: orange;
-    color: white;
-    grid-area: equal;
-    text-align: center;
-    font-size: 30px;
-}
 .calculator{
     display: grid;
     grid-area: calculator;
@@ -111,14 +128,3 @@ body {
     "n1       n2       n3        addition"
     "n0       n0       n0        equal"
 }
-.page{
-    height: 700px;
-    display: grid;
-    grid-template-areas: 
-    ". . .          . ."
-    ". . calculator . ."
-    ". . .          . .";
-    grid-template-columns: 1fr 1fr 2fr 1fr 1fr;
-    grid-template-rows: 1fr 10fr 1fr;
-}
-
